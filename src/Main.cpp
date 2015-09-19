@@ -42,7 +42,11 @@ int main(int argc, char** argv) {
 				GLFWwindow* newWindow;
 
 				if (fullscreen) {
-					newWindow = glfwCreateWindow(1680, 1050, "Or3Tech", glfwGetPrimaryMonitor(), window);
+
+					int count;
+					const GLFWvidmode* modes = glfwGetVideoModes(glfwGetPrimaryMonitor(), &count);
+
+					newWindow = glfwCreateWindow(modes[count - 1].width, modes[count - 1].height, "Or3Tech", glfwGetPrimaryMonitor(), window);
 				}else{
 					newWindow = glfwCreateWindow(g_windowWidth, g_windowHight, "Or3Tech", nullptr, window);
 				}
