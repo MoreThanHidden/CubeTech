@@ -127,9 +127,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Or3Tech\Block.cpp" />
+    <ClCompile Include="src\Or3Tech\Chunk.cpp" />
     <ClCompile Include="src\Or3Tech\ShaderProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Or3Tech\Block.hpp" />
+    <ClInclude Include="include\Or3Tech\Chunk.hpp" />
     <ClInclude Include="include\Or3Tech\Common.hpp" />
     <ClInclude Include="include\Or3Tech\ShaderProgram.hpp" />
   </ItemGroup>

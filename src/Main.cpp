@@ -66,6 +66,7 @@ int main(int argc, char** argv)
 	shaderProgram.use();
 
 
+
 	bool running = true;
 	bool fullscreen = false;
 	while (running){

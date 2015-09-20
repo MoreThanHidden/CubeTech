@@ -19,7 +19,7 @@ namespace Or3Tech{
 				getline(file, line);
 
 				output.append(line + "\n");
-			}
+			} 
 		}
 
 		file.close();
