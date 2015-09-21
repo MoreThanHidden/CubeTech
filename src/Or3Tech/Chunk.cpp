@@ -68,6 +68,9 @@ namespace Or3Tech {
 
 	}
 
+	void Chunk::Render(ShaderProgram* pRenderer, bool translateTexture){
+						
+	}
 
 
 }

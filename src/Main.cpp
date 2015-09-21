@@ -8,6 +8,8 @@
 
 #include <Or3Tech/Common.hpp>
 #include <Or3Tech/ShaderProgram.hpp>
+#include <Or3Tech/Block.hpp>
+#include <Or3Tech/Chunk.hpp>
 
 GLOBAL const int g_windowWidth = 854;
 GLOBAL const int g_windowHeight = 480;

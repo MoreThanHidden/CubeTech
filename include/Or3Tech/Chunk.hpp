@@ -15,11 +15,17 @@ namespace Or3Tech {
 
 		void Render(ShaderProgram* pRenderer);
 
+		void CreateMesh();
+		void CreateCube();
+
+		void Render(ShaderProgram * pRenderer, bool translateTexture);
+
 		static const int CHUNK_SIZE = 16;
 
 	private:
 		// The blocks data
 		Block*** m_pBlocks;
+	
 	};	
 
 }//namesapce Or3Tech
