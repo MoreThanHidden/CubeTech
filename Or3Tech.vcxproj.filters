@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -15,35 +11,68 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Or3Tech\ShaderProgram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Or3Tech\Block.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Or3Tech\Chunk.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\Or3Tech\Common.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Or3Tech\ShaderProgram.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Or3Tech\Block.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Or3Tech\Chunk.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Or3Tech\shader.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\controls.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\texture.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\Game.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\Render.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\Shape.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\CreateShape.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Or3Tech\TextureRegistry.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\default.vert.glsl" />
     <None Include="data\shaders\default.frag.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\dirt.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="textures\grass.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="textures\gravel.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="textures\sand.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="textures\stone.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Or3Tech\objects\Block.cpp" />
+    <ClCompile Include="src\Or3Tech\objects\Chunk.cpp" />
+    <ClCompile Include="src\Or3Tech\utils\controls.cpp" />
+    <ClCompile Include="src\Or3Tech\utils\shader.cpp" />
+    <ClCompile Include="src\Or3Tech\utils\texture.cpp" />
+    <ClCompile Include="src\Or3Tech\Game.cpp" />
+    <ClCompile Include="src\Or3Tech\Render.cpp" />
+    <ClCompile Include="src\Or3Tech\registry\TextureRegistry.cpp" />
+    <ClCompile Include="src\Or3Tech\registry\CreateShape.cpp" />
   </ItemGroup>
 </Project>

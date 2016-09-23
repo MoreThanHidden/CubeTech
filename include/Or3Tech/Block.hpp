@@ -1,9 +1,7 @@
-#ifndef OR3TECH_BLOCK_HPP
-#define OR3TECH_BLOCK_HPP
+#ifndef BLOCK_HPP
+#define BLOCK_HPP
 
-namespace Or3Tech {
-
-	enum class BlockType {
+enum class BlockType {
 		BlockType_Default = 0,
 
 		BlockType_Stone,
@@ -12,7 +10,7 @@ namespace Or3Tech {
 		BlockType_Dirt,
 		BlockType_Grass,
 
-	};
+};
 
 	class Block{
 	public:
@@ -20,14 +18,12 @@ namespace Or3Tech {
 		virtual ~Block();
 
 		bool IsActive();
-		void SetActive(bool active);
+		void SetActive();
+		bool IsSolid();
 
 	private:
 		bool m_active;
-
+		bool m_solid;
 		BlockType m_blockType;
-	};
-
-}//namesapce Or3Tech
-
+};
 #endif
