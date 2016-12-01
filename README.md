@@ -1,4 +1,9 @@
-# Or3Tech
+# VoxelTech
 Learning C++ by Making a Game
 
-I'm in the process of making a game in C++ using OpenGL through the use of glew and glfw, I'll probably be adding additional premade librarys for texture managment ect.
+External Libs are needed for this to compile have exluded these as I didn't feel right including them.
+Libnoise, glew, glfw, glm 
+
+I'll probably make a gradle build script at some stage
+
+This is just a test game I work on in my spare time.

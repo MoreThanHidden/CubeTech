@@ -13,6 +13,7 @@ GLFWwindow* window;
 #include <Or3Tech/CreateShape.hpp>
 #include <Or3Tech/Render.hpp>
 #include <Or3Tech/Chunk.hpp>
+#include <Or3Tech/Level.hpp>
 #include <Or3Tech/TextureRegistry.hpp>
 
 void Game::run() {
@@ -30,8 +31,11 @@ void Game::run() {
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
+	int Window_Width = 1024;
+	int Window_Height = 768;
+
 	// Open a window and create its OpenGL context
-	window = glfwCreateWindow(1024, 768, "Ore World", NULL, NULL);
+	window = glfwCreateWindow(Window_Width, Window_Height, "Ore World", NULL, NULL);
 	if (window == NULL) {
 		fprintf(stderr, "Failed to open GLFW window.");
 		getchar();
@@ -54,10 +58,10 @@ void Game::run() {
 
 	TextureRegistry TextureReg;
 
-	Render* Renderer = new Render;
-	Chunk chunk = Chunk();
+	Renderer = new Render;
+	Level* level = new Level;
 	Renderer->prep();
-	Shape shapechunk = chunk.CreateMesh();
+	
 	// Set the mouse at the center of the screen
 	glfwPollEvents();
 	glfwSetCursorPos(window, 1024 / 2, 768 / 2);
@@ -65,22 +69,23 @@ void Game::run() {
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 	glEnable(GL_CULL_FACE);
-	
-
 
 	CreateShape shapemaker;
-	Shape cube = shapemaker.CreateCube();
+	Shape * cube = new Shape;
+	level->CreateMesh(cube, &TextureReg);
 
 	do {
 			Renderer->beginDo();
 
-			Renderer->bindTexture(TextureReg, TextureReg.TEXTURE_NOTEXTURE);
-			
-
-			Renderer->build(shapechunk);
+			if (cube->verticies.size() > 0) {
+				Renderer->build(cube);
+			}
 
 			glfwSwapBuffers(window);
 			glfwPollEvents();
+
+			
+
 
 		} while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
 		glfwWindowShouldClose(window) == 0);

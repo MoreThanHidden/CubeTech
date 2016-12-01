@@ -13,14 +13,15 @@ class Render {
 public:	
 	void beginDo();
 	void prep();
-	void bindTexture(TextureRegistry textureReg, enum TextureRegistry::TextureEnum textureEnum);
-	void build(Shape shape);
+	void build(Shape * shape);
+	void update();
 	~Render();
 private:
 	int vertexCount;
 	GLuint vertexbuffer;
 	GLuint ebobuffer;
 	GLuint uvbuffer;
+	GLuint Texturebuffer;
 	bool activebuffer = false;
 	GLuint Texture;
 	GLuint TextureID;

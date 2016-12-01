@@ -77,12 +77,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glm;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\include\GLFW;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\libnoise\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glm;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\include\GLFW;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\lib\Release\Win32;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\lib-vc2015</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\libnoise;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\lib\Release\Win32;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\lib-vc2015</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glfw3dll.lib;libnoise.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/NODEFAULTLIB:MSVCRT %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -106,14 +106,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glm;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\include\GLFW;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\libnoise\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glm;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\include\GLFW;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\lib\Release\Win32;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\lib-vc2015</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\JOHN\Documents\GitHub\Or3Tech\external\libnoise;C:\Users\JOHN\Documents\GitHub\Or3Tech\include;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glew-2.0.0\lib\Release\Win32;C:\Users\JOHN\Documents\GitHub\Or3Tech\external\glfw-3.2.1.bin.WIN32\lib-vc2015</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;glfw3dll.lib;libnoise.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,7 +134,54 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="external\libnoise\include\noise\basictypes.h" />
+    <ClInclude Include="external\libnoise\include\noise\exception.h" />
+    <ClInclude Include="external\libnoise\include\noise\interp.h" />
+    <ClInclude Include="external\libnoise\include\noise\latlon.h" />
+    <ClInclude Include="external\libnoise\include\noise\mathconsts.h" />
+    <ClInclude Include="external\libnoise\include\noise\misc.h" />
+    <ClInclude Include="external\libnoise\include\noise\model\cylinder.h" />
+    <ClInclude Include="external\libnoise\include\noise\model\line.h" />
+    <ClInclude Include="external\libnoise\include\noise\model\model.h" />
+    <ClInclude Include="external\libnoise\include\noise\model\plane.h" />
+    <ClInclude Include="external\libnoise\include\noise\model\sphere.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\abs.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\add.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\billow.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\blend.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\cache.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\checkerboard.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\clamp.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\const.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\curve.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\cylinders.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\displace.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\exponent.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\invert.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\max.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\min.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\module.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\modulebase.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\multiply.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\perlin.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\power.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\ridgedmulti.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\rotatepoint.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\scalebias.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\scalepoint.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\select.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\spheres.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\terrace.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\translatepoint.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\turbulence.h" />
+    <ClInclude Include="external\libnoise\include\noise\module\voronoi.h" />
+    <ClInclude Include="external\libnoise\include\noise\noise.h" />
+    <ClInclude Include="external\libnoise\include\noise\noisegen.h" />
+    <ClInclude Include="external\libnoise\include\noise\vectortable.h" />
     <ClInclude Include="include\Or3Tech\CreateShape.hpp" />
+    <ClInclude Include="include\Or3Tech\ChunkPos.hpp" />
+    <ClInclude Include="include\Or3Tech\Level.hpp" />
+    <ClInclude Include="include\Or3Tech\Player.hpp" />
     <ClInclude Include="include\Or3Tech\Shape.hpp" />
     <ClInclude Include="include\Or3Tech\Block.hpp" />
     <ClInclude Include="include\Or3Tech\Chunk.hpp" />
@@ -142,31 +189,41 @@
     <ClInclude Include="include\Or3Tech\Game.hpp" />
     <ClInclude Include="include\Or3Tech\Render.hpp" />
     <ClInclude Include="include\Or3Tech\shader.hpp" />
+    <ClInclude Include="include\Or3Tech\SidedTexture.hpp" />
     <ClInclude Include="include\Or3Tech\texture.hpp" />
     <ClInclude Include="include\Or3Tech\TextureRegistry.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\shaders\default.frag.glsl" />
     <None Include="data\shaders\default.vert.glsl" />
+    <None Include="external\libnoise\libnoise.dll" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="textures\dirt.bmp" />
     <Image Include="textures\grass.bmp" />
+    <Image Include="textures\grasstop.bmp" />
     <Image Include="textures\gravel.bmp" />
+    <Image Include="textures\notexture.bmp" />
     <Image Include="textures\sand.bmp" />
     <Image Include="textures\stone.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Or3Tech\objects\ChunkPos.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\Or3Tech\objects\Block.cpp" />
     <ClCompile Include="src\Or3Tech\objects\Chunk.cpp" />
     <ClCompile Include="src\Or3Tech\Game.cpp" />
+    <ClCompile Include="src\Or3Tech\objects\Level.cpp" />
+    <ClCompile Include="src\Or3Tech\objects\Player.cpp" />
     <ClCompile Include="src\Or3Tech\registry\TextureRegistry.cpp" />
     <ClCompile Include="src\Or3Tech\registry\CreateShape.cpp" />
     <ClCompile Include="src\Or3Tech\Render.cpp" />
     <ClCompile Include="src\Or3Tech\utils\controls.cpp" />
     <ClCompile Include="src\Or3Tech\utils\shader.cpp" />
     <ClCompile Include="src\Or3Tech\utils\texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="external\libnoise\libnoise.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

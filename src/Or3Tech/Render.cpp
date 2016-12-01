@@ -17,21 +17,21 @@ void Render::prep() {
 }
 
 
-void Render::build(Shape shape) {
+void Render::build(Shape * shape) {
 
 	if (!activebuffer) {
 	activebuffer = true;
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
-	glBufferData(GL_ARRAY_BUFFER, shape.verticies.size() * sizeof(GLfloat), &shape.verticies.front(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, shape->verticies.size() * sizeof(GLfloat), &shape->verticies.front(), GL_STATIC_DRAW);
 
 	glGenBuffers(1, &ebobuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebobuffer);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, shape.indices.size() * sizeof(GLuint), &shape.indices.front(), GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, shape->indices.size() * sizeof(GLuint), &shape->indices.front(), GL_STATIC_DRAW);
 
 	glGenBuffers(1, &uvbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
-	glBufferData(GL_ARRAY_BUFFER, shape.uvs.size() * sizeof(GLfloat), &shape.uvs.front(), GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, shape->uvs.size() * sizeof(GLfloat), &shape->uvs.front(), GL_STATIC_DRAW);
 
 	}
 	// 1rst attribute buffer : vertices
@@ -44,20 +44,24 @@ void Render::build(Shape shape) {
 	glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, (void*)0);
 
-	int size;  glGetBufferParameteriv(GL_ELEMENT_ARRAY_BUFFER, GL_BUFFER_SIZE, &size);
-	glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, 0);
+	for (size_t i = 0; i < (shape->textures.size()); i++){
+		glBindTexture(GL_TEXTURE_2D, shape->textures[i]);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void *)(sizeof(GLfloat) * 6 * i));
+	}
+
+	//glBindTexture(GL_TEXTURE_2D, shape->textures[0]);
+	//glDrawElements(GL_TRIANGLES, shape->indices.size() * sizeof(GLuint), GL_UNSIGNED_INT, (void*)0);
+	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, indexBuffer);
+
 
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(1);
+	glDisableVertexAttribArray(2);
 
 }
 
-void Render::bindTexture(TextureRegistry textureReg, enum TextureRegistry::TextureEnum textureEnum) {
-	// Bind our texture in Texture Unit 0
-	glActiveTexture(GL_TEXTURE0);
-	Texture = textureReg.getTexture(textureEnum);
-	glBindTexture(GL_TEXTURE_2D, Texture);
-	glUniform1i(TextureID, 0);
+void Render::update() {
+	activebuffer = false;
 }
 
 void Render::beginDo() {

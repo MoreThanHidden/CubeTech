@@ -8,5 +8,6 @@ public:
 	std::vector<GLfloat> verticies;
 	std::vector<GLuint> indices;
 	std::vector<GLfloat> uvs;
+	std::vector<GLuint> textures;
 };
 #endif
